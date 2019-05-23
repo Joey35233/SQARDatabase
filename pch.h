@@ -2,9 +2,20 @@
 
 #include <iostream>
 #define WIN32_LEAN_AND_MEAN
+#define NOMINMAX
 #include <windows.h>
 #include <emmintrin.h>
 #include <string>
+#include <cstdint>
+#include <cstddef>
+#include <functional>
+#include <cmath>
+#include <algorithm>
+#include <iterator>
+#include <utility>
+#include <type_traits>
+#include <vector>
+#include <array>
 
 using ubyte = uint8_t;
 using ushort = uint16_t;

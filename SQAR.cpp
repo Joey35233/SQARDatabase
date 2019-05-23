@@ -25,7 +25,7 @@ SQAR::SQAR(UDataStream& stream)
 	// Determines the alignment block size.
 	int blockShiftBits = (Flags & 0x800) > 0 ? 12 : 10;
 
-	Entries = (SQARFile*)malloc(sizeof(SQARFile) * FileCount);
+	auto entries = (SQARFile*)malloc(sizeof(SQARFile) * FileCount);
 	for (uint i = 0; i < FileCount; i++)
 	{
 		auto section = sections[i];
@@ -35,7 +35,9 @@ SQAR::SQAR(UDataStream& stream)
 		ulong sectionOffset = sectionBlock << blockShiftBits;
 		stream.Seek(sectionOffset);
 
-		Entries[i] = SQARFile(stream);
+		entries[i] = SQARFile(stream);
+		auto hashStart = hash & 0xFFFFFFFF;
+		Entries.emplace(hashStart, entries + i); // remove extension prefix - temporary
 	}
 }
 
@@ -64,32 +66,28 @@ ulong* SQAR::DecryptSectionList(ulong* sections)
 	return result;
 }
 
-SQARFile* SQAR::GetEntry(uint i)
+SQARFileBlob SQAR::GetEntry(ulong hash)
 {
-	return Entries + i;
-}
-
-ubyte* SQAR::GetFile(uint i)
-{
+	auto entry = Entries[hash];
 	ubyte* buffer = nullptr;
 
-	auto entry = GetEntry(i);
 	auto uncompressedSize = entry->GetUncompressedSize();
+	auto dataOffset = entry->GetDataOffset();
 
 	if (entry->IsCompressed())
 	{
 		auto compressedSize = entry->GetCompressedSize();
 
-		auto decryptedData = DecryptData((uint)entry->GetHash(), entry->GetDataOffset(), compressedSize);
+		auto decryptedData = DecryptData((uint)hash, dataOffset, compressedSize);
 		buffer = new ubyte[uncompressedSize];
 		uLong ucSize = uncompressedSize;
 		uncompress(buffer, &ucSize, decryptedData, compressedSize);
 
-		return buffer;
+		return { entry->GetHash(), uncompressedSize, buffer };
 	}
 
-	memcpy(buffer, Data + entry->GetDataOffset(), uncompressedSize);
-	return buffer;
+	memcpy(buffer, Data + dataOffset, uncompressedSize);
+	return { hash, uncompressedSize, buffer };
 }
 
 ubyte* SQAR::DecryptData(uint hashLow, ulong dataOffset, ulong size)
@@ -103,7 +101,6 @@ ubyte* SQAR::DecryptData(uint hashLow, ulong dataOffset, ulong size)
 
 		uint index = (2 * ((hashLow + offset / 11) % 4));
 
-		//dat
 		*(ulong*)(data + offset) ^= (ulong)DecryptionTable[index + 1] << 32 | DecryptionTable[index];
 	}
 

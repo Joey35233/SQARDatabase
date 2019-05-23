@@ -167,6 +167,9 @@
     <ClCompile Include="SQARFile.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="bytell_hash_map.h" />
+    <ClInclude Include="SQARFileBlob.h" />
+    <ClInclude Include="flat_hash_map.h" />
     <ClInclude Include="UDataStream.h" />
     <ClInclude Include="MD5.h" />
     <ClInclude Include="pch.h" />

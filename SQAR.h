@@ -1,13 +1,14 @@
 #pragma once
 #include "UDataStream.h"
 #include "SQARFile.h"
+#include "SQARFileBlob.h"
+#include "bytell_hash_map.h"
 
 class SQAR
 {
 public:
 	SQAR(UDataStream&);
-	SQARFile* GetEntry(uint i);
-	ubyte* GetFile(uint i);
+	SQARFileBlob GetEntry(ulong hash);
 	uint GetFileCount();
 
 private:
@@ -19,7 +20,7 @@ private:
 	uint FirstFileOffset;
 	uint Version;
 	uint Unknown;
-	SQARFile* Entries;
+	ska::bytell_hash_map<ulong, SQARFile*> Entries;
 	ubyte* Data;
 
 	void FormatHeader(ubyte* __restrict bytes);

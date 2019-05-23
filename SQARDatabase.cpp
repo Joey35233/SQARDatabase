@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "UDataStream.h"
 #include "SQAR.h"
+#include "bytell_hash_map.h"
 
 // This right here, this right here is laziness.
 UDataStream ReadSQAR(const wchar_t* fileName)
@@ -30,11 +31,11 @@ UDataStream ReadSQAR(const wchar_t* fileName)
 	return UDataStream(buffer);
 }
 
-void WriteFile(SQARFile* entry, ubyte* data)
+void WriteSQARFile(const SQARFileBlob& blob)
 {
 	auto file = CreateFile
 	(
-		std::to_wstring(entry->GetHash()).c_str(),
+		std::to_wstring(blob.hash).c_str(),
 		GENERIC_WRITE,
 		FILE_SHARE_WRITE,
 		NULL,
@@ -42,8 +43,7 @@ void WriteFile(SQARFile* entry, ubyte* data)
 		FILE_ATTRIBUTE_NORMAL,
 		NULL
 	);
-	WriteFile(file, data, entry->GetUncompressedSize(), NULL, NULL);
-	delete[] data;
+	WriteFile(file, blob.data, blob.size, NULL, NULL);
 	CloseHandle(file);
 }
 
@@ -53,16 +53,8 @@ int main()
 
 	auto archive = new SQAR(stream);
 
-	for (uint i = 0; i < archive->GetFileCount(); i++)
-	{
-		auto entry = archive->GetEntry(i);
-		if (entry->IsEncrypted())
-		{
-			printf("Error: %llu#018x is encrypted!\n", entry->GetHash());
-			break;
-		}
-			
-		WriteFile(entry, archive->GetFile(i));
-	}
+	ulong hash = 0x522997cd03f88edd >> 32;
+	WriteSQARFile(archive->GetEntry(hash));
+
 	return 0;
 }
