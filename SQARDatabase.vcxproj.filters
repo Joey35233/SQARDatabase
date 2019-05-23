@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\SQAR">
+      <UniqueIdentifier>{bb04a0a9-3cf4-4c61-a8ae-0718017c70a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SQAR">
+      <UniqueIdentifier>{358c20cd-6e42-48fc-a0d2-61db3796b871}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\IO">
+      <UniqueIdentifier>{e2b7216d-33da-4719-bf83-dc682600d90d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\IO">
+      <UniqueIdentifier>{69e966f5-1341-46c0-83e4-a5a35af9e7f8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="SQAR.cpp">
+      <Filter>Source Files\SQAR</Filter>
+    </ClCompile>
+    <ClCompile Include="SQARDatabase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SQARFile.cpp">
+      <Filter>Source Files\SQAR</Filter>
+    </ClCompile>
+    <ClCompile Include="UDataStream.cpp">
+      <Filter>Source Files\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="MD5.cpp">
+      <Filter>Source Files\IO</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SQAR.h">
+      <Filter>Header Files\SQAR</Filter>
+    </ClInclude>
+    <ClInclude Include="SQARFile.h">
+      <Filter>Header Files\SQAR</Filter>
+    </ClInclude>
+    <ClInclude Include="UDataStream.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="MD5.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

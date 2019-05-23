@@ -1,0 +1,8 @@
+C:/Users/joey3/Downloads/zlib-1.2.8/CMakeFiles/zlib.dir
+C:/Users/joey3/Downloads/zlib-1.2.8/CMakeFiles/zlibstatic.dir
+C:/Users/joey3/Downloads/zlib-1.2.8/CMakeFiles/example.dir
+C:/Users/joey3/Downloads/zlib-1.2.8/CMakeFiles/minigzip.dir
+C:/Users/joey3/Downloads/zlib-1.2.8/CMakeFiles/INSTALL.dir
+C:/Users/joey3/Downloads/zlib-1.2.8/CMakeFiles/RUN_TESTS.dir
+C:/Users/joey3/Downloads/zlib-1.2.8/CMakeFiles/ALL_BUILD.dir
+C:/Users/joey3/Downloads/zlib-1.2.8/CMakeFiles/ZERO_CHECK.dir
