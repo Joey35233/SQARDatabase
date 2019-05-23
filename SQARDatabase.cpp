@@ -31,11 +31,11 @@ UDataStream ReadSQAR(const wchar_t* fileName)
 	return UDataStream(buffer);
 }
 
-void WriteSQARFile(const SQARFileBlob& blob)
+void WriteSQARFile(ulong hash, const SQARFileBlob& blob)
 {
 	auto file = CreateFile
 	(
-		std::to_wstring(blob.hash).c_str(),
+		std::to_wstring(hash).c_str(),
 		GENERIC_WRITE,
 		FILE_SHARE_WRITE,
 		NULL,
@@ -54,7 +54,7 @@ int main()
 	auto archive = new SQAR(stream);
 
 	ulong hash = 0x522997cd03f88edd >> 32;
-	WriteSQARFile(archive->GetEntry(hash));
+	WriteSQARFile(hash, archive->GetEntry(hash));
 
 	return 0;
 }

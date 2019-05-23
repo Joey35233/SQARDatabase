@@ -3,7 +3,6 @@
 
 struct SQARFileBlob
 {
-	ulong hash;
 	ulong size;
 	ubyte* data;
 

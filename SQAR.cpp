@@ -83,11 +83,11 @@ SQARFileBlob SQAR::GetEntry(ulong hash)
 		uLong ucSize = uncompressedSize;
 		uncompress(buffer, &ucSize, decryptedData, compressedSize);
 
-		return { entry->GetHash(), uncompressedSize, buffer };
+		return { uncompressedSize, buffer };
 	}
 
 	memcpy(buffer, Data + dataOffset, uncompressedSize);
-	return { hash, uncompressedSize, buffer };
+	return { uncompressedSize, buffer };
 }
 
 ubyte* SQAR::DecryptData(uint hashLow, ulong dataOffset, ulong size)
