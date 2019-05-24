@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\joey3\Downloads\zlib-1.2.8\test\example.c">
+    <ClCompile Include="C:\Users\joey3\Documents\GitHub\SQARDatabase\zlib\test\example.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\joey3\Downloads\zlib-1.2.8\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\joey3\Documents\GitHub\SQARDatabase\zlib\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{582F8BB9-B77F-3D84-8F41-C0B02DCBDC11}</UniqueIdentifier>
+      <UniqueIdentifier>{4C7E2597-0E30-325A-9988-30096D14E8D8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

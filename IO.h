@@ -1,6 +1,18 @@
 #pragma once
 #include "pch.h"
 
+struct FileBlob
+{
+	ulong size;
+	ubyte* data;
+
+	~FileBlob()
+	{
+		delete[] data;
+		//ReadFile()
+	}
+};
+
 class UDataStream
 {
 public:
@@ -35,3 +47,8 @@ private:
 	ulong bufferCursor;
 	ubyte* buffer;
 };
+
+// This right here, this right here is laziness.
+UDataStream ReadFile(const wchar_t* fileName);
+void WriteFile(ulong hash, const FileBlob& blob);
+void WriteFile(const wchar* name, const FileBlob& blob);

@@ -11,12 +11,14 @@
 #include <functional>
 #include <cmath>
 #include <algorithm>
+#include <string>
 #include <iterator>
 #include <utility>
 #include <type_traits>
 #include <vector>
 #include <array>
 
+using wchar = wchar_t;
 using ubyte = uint8_t;
 using ushort = uint16_t;
 using uint = uint32_t;

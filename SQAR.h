@@ -1,14 +1,13 @@
 #pragma once
-#include "UDataStream.h"
 #include "SQARFile.h"
-#include "SQARFileBlob.h"
+#include "IO.h"
 #include "bytell_hash_map.h"
 
 class SQAR
 {
 public:
 	SQAR(UDataStream&);
-	SQARFileBlob GetEntry(ulong hash);
+	FileBlob GetEntry(ulong hash);
 	uint GetFileCount();
 
 private:

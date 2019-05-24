@@ -66,7 +66,7 @@ ulong* SQAR::DecryptSectionList(ulong* sections)
 	return result;
 }
 
-SQARFileBlob SQAR::GetEntry(ulong hash)
+FileBlob SQAR::GetEntry(ulong hash)
 {
 	auto entry = Entries[hash];
 	ubyte* buffer = nullptr;

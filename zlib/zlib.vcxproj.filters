@@ -1,101 +1,101 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\joey3\Downloads\zlib-1.2.8\adler32.c">
+    <ClCompile Include="C:\Users\joey3\Documents\GitHub\SQARDatabase\zlib\adler32.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\joey3\Downloads\zlib-1.2.8\compress.c">
+    <ClCompile Include="C:\Users\joey3\Documents\GitHub\SQARDatabase\zlib\compress.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\joey3\Downloads\zlib-1.2.8\crc32.c">
+    <ClCompile Include="C:\Users\joey3\Documents\GitHub\SQARDatabase\zlib\crc32.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\joey3\Downloads\zlib-1.2.8\deflate.c">
+    <ClCompile Include="C:\Users\joey3\Documents\GitHub\SQARDatabase\zlib\deflate.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\joey3\Downloads\zlib-1.2.8\gzclose.c">
+    <ClCompile Include="C:\Users\joey3\Documents\GitHub\SQARDatabase\zlib\gzclose.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\joey3\Downloads\zlib-1.2.8\gzlib.c">
+    <ClCompile Include="C:\Users\joey3\Documents\GitHub\SQARDatabase\zlib\gzlib.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\joey3\Downloads\zlib-1.2.8\gzread.c">
+    <ClCompile Include="C:\Users\joey3\Documents\GitHub\SQARDatabase\zlib\gzread.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\joey3\Downloads\zlib-1.2.8\gzwrite.c">
+    <ClCompile Include="C:\Users\joey3\Documents\GitHub\SQARDatabase\zlib\gzwrite.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\joey3\Downloads\zlib-1.2.8\inflate.c">
+    <ClCompile Include="C:\Users\joey3\Documents\GitHub\SQARDatabase\zlib\inflate.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\joey3\Downloads\zlib-1.2.8\infback.c">
+    <ClCompile Include="C:\Users\joey3\Documents\GitHub\SQARDatabase\zlib\infback.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\joey3\Downloads\zlib-1.2.8\inftrees.c">
+    <ClCompile Include="C:\Users\joey3\Documents\GitHub\SQARDatabase\zlib\inftrees.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\joey3\Downloads\zlib-1.2.8\inffast.c">
+    <ClCompile Include="C:\Users\joey3\Documents\GitHub\SQARDatabase\zlib\inffast.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\joey3\Downloads\zlib-1.2.8\trees.c">
+    <ClCompile Include="C:\Users\joey3\Documents\GitHub\SQARDatabase\zlib\trees.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\joey3\Downloads\zlib-1.2.8\uncompr.c">
+    <ClCompile Include="C:\Users\joey3\Documents\GitHub\SQARDatabase\zlib\uncompr.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\joey3\Downloads\zlib-1.2.8\zutil.c">
+    <ClCompile Include="C:\Users\joey3\Documents\GitHub\SQARDatabase\zlib\zutil.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\Users\joey3\Downloads\zlib-1.2.8\zconf.h">
+    <ClInclude Include="C:\Users\joey3\Documents\GitHub\SQARDatabase\zlib\zconf.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\joey3\Downloads\zlib-1.2.8\zlib.h">
+    <ClInclude Include="C:\Users\joey3\Documents\GitHub\SQARDatabase\zlib\zlib.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\joey3\Downloads\zlib-1.2.8\crc32.h">
+    <ClInclude Include="C:\Users\joey3\Documents\GitHub\SQARDatabase\zlib\crc32.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\joey3\Downloads\zlib-1.2.8\deflate.h">
+    <ClInclude Include="C:\Users\joey3\Documents\GitHub\SQARDatabase\zlib\deflate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\joey3\Downloads\zlib-1.2.8\gzguts.h">
+    <ClInclude Include="C:\Users\joey3\Documents\GitHub\SQARDatabase\zlib\gzguts.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\joey3\Downloads\zlib-1.2.8\inffast.h">
+    <ClInclude Include="C:\Users\joey3\Documents\GitHub\SQARDatabase\zlib\inffast.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\joey3\Downloads\zlib-1.2.8\inffixed.h">
+    <ClInclude Include="C:\Users\joey3\Documents\GitHub\SQARDatabase\zlib\inffixed.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\joey3\Downloads\zlib-1.2.8\inflate.h">
+    <ClInclude Include="C:\Users\joey3\Documents\GitHub\SQARDatabase\zlib\inflate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\joey3\Downloads\zlib-1.2.8\inftrees.h">
+    <ClInclude Include="C:\Users\joey3\Documents\GitHub\SQARDatabase\zlib\inftrees.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\joey3\Downloads\zlib-1.2.8\trees.h">
+    <ClInclude Include="C:\Users\joey3\Documents\GitHub\SQARDatabase\zlib\trees.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\joey3\Downloads\zlib-1.2.8\zutil.h">
+    <ClInclude Include="C:\Users\joey3\Documents\GitHub\SQARDatabase\zlib\zutil.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\joey3\Downloads\zlib-1.2.8\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\joey3\Documents\GitHub\SQARDatabase\zlib\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="C:\Users\joey3\Downloads\zlib-1.2.8\win32\zlib1.rc">
+    <ResourceCompile Include="C:\Users\joey3\Documents\GitHub\SQARDatabase\zlib\win32\zlib1.rc">
       <Filter>Source Files</Filter>
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{C307AC09-0F72-3920-B8F1-C4A5958835C3}</UniqueIdentifier>
+      <UniqueIdentifier>{F9502141-95BF-3F16-9CA9-E377A5E70292}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{582F8BB9-B77F-3D84-8F41-C0B02DCBDC11}</UniqueIdentifier>
+      <UniqueIdentifier>{4C7E2597-0E30-325A-9988-30096D14E8D8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

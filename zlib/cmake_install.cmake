@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/joey3/Downloads/zlib-1.2.8
+# Install script for directory: C:/Users/joey3/Documents/GitHub/SQARDatabase/zlib
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -42,7 +42,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
         message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-file(INSTALL DESTINATION "C:/Program Files (x86)/zlib/lib" TYPE STATIC_LIBRARY OPTIONAL FILES "C:/Users/joey3/Downloads/zlib-1.2.8/Debug/zlibd.lib")
+file(INSTALL DESTINATION "C:/Program Files (x86)/zlib/lib" TYPE STATIC_LIBRARY OPTIONAL FILES "C:/Users/joey3/Documents/GitHub/SQARDatabase/zlib/Debug/zlibd.lib")
   elseif("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
     list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
      "C:/Program Files (x86)/zlib/lib/zlib.lib")
@@ -52,7 +52,7 @@ file(INSTALL DESTINATION "C:/Program Files (x86)/zlib/lib" TYPE STATIC_LIBRARY O
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
         message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-file(INSTALL DESTINATION "C:/Program Files (x86)/zlib/lib" TYPE STATIC_LIBRARY OPTIONAL FILES "C:/Users/joey3/Downloads/zlib-1.2.8/Release/zlib.lib")
+file(INSTALL DESTINATION "C:/Program Files (x86)/zlib/lib" TYPE STATIC_LIBRARY OPTIONAL FILES "C:/Users/joey3/Documents/GitHub/SQARDatabase/zlib/Release/zlib.lib")
   elseif("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
     list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
      "C:/Program Files (x86)/zlib/lib/zlib.lib")
@@ -62,7 +62,7 @@ file(INSTALL DESTINATION "C:/Program Files (x86)/zlib/lib" TYPE STATIC_LIBRARY O
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
         message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-file(INSTALL DESTINATION "C:/Program Files (x86)/zlib/lib" TYPE STATIC_LIBRARY OPTIONAL FILES "C:/Users/joey3/Downloads/zlib-1.2.8/MinSizeRel/zlib.lib")
+file(INSTALL DESTINATION "C:/Program Files (x86)/zlib/lib" TYPE STATIC_LIBRARY OPTIONAL FILES "C:/Users/joey3/Documents/GitHub/SQARDatabase/zlib/MinSizeRel/zlib.lib")
   elseif("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
     list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
      "C:/Program Files (x86)/zlib/lib/zlib.lib")
@@ -72,7 +72,7 @@ file(INSTALL DESTINATION "C:/Program Files (x86)/zlib/lib" TYPE STATIC_LIBRARY O
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
         message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-file(INSTALL DESTINATION "C:/Program Files (x86)/zlib/lib" TYPE STATIC_LIBRARY OPTIONAL FILES "C:/Users/joey3/Downloads/zlib-1.2.8/RelWithDebInfo/zlib.lib")
+file(INSTALL DESTINATION "C:/Program Files (x86)/zlib/lib" TYPE STATIC_LIBRARY OPTIONAL FILES "C:/Users/joey3/Documents/GitHub/SQARDatabase/zlib/RelWithDebInfo/zlib.lib")
   endif()
 endif()
 
@@ -86,7 +86,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
         message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-file(INSTALL DESTINATION "C:/Program Files (x86)/zlib/bin" TYPE SHARED_LIBRARY FILES "C:/Users/joey3/Downloads/zlib-1.2.8/Debug/zlibd.dll")
+file(INSTALL DESTINATION "C:/Program Files (x86)/zlib/bin" TYPE SHARED_LIBRARY FILES "C:/Users/joey3/Documents/GitHub/SQARDatabase/zlib/Debug/zlibd.dll")
   elseif("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
     list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
      "C:/Program Files (x86)/zlib/bin/zlib.dll")
@@ -96,7 +96,7 @@ file(INSTALL DESTINATION "C:/Program Files (x86)/zlib/bin" TYPE SHARED_LIBRARY F
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
         message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-file(INSTALL DESTINATION "C:/Program Files (x86)/zlib/bin" TYPE SHARED_LIBRARY FILES "C:/Users/joey3/Downloads/zlib-1.2.8/Release/zlib.dll")
+file(INSTALL DESTINATION "C:/Program Files (x86)/zlib/bin" TYPE SHARED_LIBRARY FILES "C:/Users/joey3/Documents/GitHub/SQARDatabase/zlib/Release/zlib.dll")
   elseif("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
     list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
      "C:/Program Files (x86)/zlib/bin/zlib.dll")
@@ -106,7 +106,7 @@ file(INSTALL DESTINATION "C:/Program Files (x86)/zlib/bin" TYPE SHARED_LIBRARY F
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
         message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-file(INSTALL DESTINATION "C:/Program Files (x86)/zlib/bin" TYPE SHARED_LIBRARY FILES "C:/Users/joey3/Downloads/zlib-1.2.8/MinSizeRel/zlib.dll")
+file(INSTALL DESTINATION "C:/Program Files (x86)/zlib/bin" TYPE SHARED_LIBRARY FILES "C:/Users/joey3/Documents/GitHub/SQARDatabase/zlib/MinSizeRel/zlib.dll")
   elseif("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
     list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
      "C:/Program Files (x86)/zlib/bin/zlib.dll")
@@ -116,7 +116,7 @@ file(INSTALL DESTINATION "C:/Program Files (x86)/zlib/bin" TYPE SHARED_LIBRARY F
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
         message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-file(INSTALL DESTINATION "C:/Program Files (x86)/zlib/bin" TYPE SHARED_LIBRARY FILES "C:/Users/joey3/Downloads/zlib-1.2.8/RelWithDebInfo/zlib.dll")
+file(INSTALL DESTINATION "C:/Program Files (x86)/zlib/bin" TYPE SHARED_LIBRARY FILES "C:/Users/joey3/Documents/GitHub/SQARDatabase/zlib/RelWithDebInfo/zlib.dll")
   endif()
 endif()
 
@@ -130,7 +130,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
         message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-file(INSTALL DESTINATION "C:/Program Files (x86)/zlib/lib" TYPE STATIC_LIBRARY FILES "C:/Users/joey3/Downloads/zlib-1.2.8/Debug/zlibstaticd.lib")
+file(INSTALL DESTINATION "C:/Program Files (x86)/zlib/lib" TYPE STATIC_LIBRARY FILES "C:/Users/joey3/Documents/GitHub/SQARDatabase/zlib/Debug/zlibstaticd.lib")
   elseif("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
     list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
      "C:/Program Files (x86)/zlib/lib/zlibstatic.lib")
@@ -140,7 +140,7 @@ file(INSTALL DESTINATION "C:/Program Files (x86)/zlib/lib" TYPE STATIC_LIBRARY F
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
         message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-file(INSTALL DESTINATION "C:/Program Files (x86)/zlib/lib" TYPE STATIC_LIBRARY FILES "C:/Users/joey3/Downloads/zlib-1.2.8/Release/zlibstatic.lib")
+file(INSTALL DESTINATION "C:/Program Files (x86)/zlib/lib" TYPE STATIC_LIBRARY FILES "C:/Users/joey3/Documents/GitHub/SQARDatabase/zlib/Release/zlibstatic.lib")
   elseif("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
     list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
      "C:/Program Files (x86)/zlib/lib/zlibstatic.lib")
@@ -150,7 +150,7 @@ file(INSTALL DESTINATION "C:/Program Files (x86)/zlib/lib" TYPE STATIC_LIBRARY F
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
         message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-file(INSTALL DESTINATION "C:/Program Files (x86)/zlib/lib" TYPE STATIC_LIBRARY FILES "C:/Users/joey3/Downloads/zlib-1.2.8/MinSizeRel/zlibstatic.lib")
+file(INSTALL DESTINATION "C:/Program Files (x86)/zlib/lib" TYPE STATIC_LIBRARY FILES "C:/Users/joey3/Documents/GitHub/SQARDatabase/zlib/MinSizeRel/zlibstatic.lib")
   elseif("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
     list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
      "C:/Program Files (x86)/zlib/lib/zlibstatic.lib")
@@ -160,7 +160,7 @@ file(INSTALL DESTINATION "C:/Program Files (x86)/zlib/lib" TYPE STATIC_LIBRARY F
     if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
         message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
     endif()
-file(INSTALL DESTINATION "C:/Program Files (x86)/zlib/lib" TYPE STATIC_LIBRARY FILES "C:/Users/joey3/Downloads/zlib-1.2.8/RelWithDebInfo/zlibstatic.lib")
+file(INSTALL DESTINATION "C:/Program Files (x86)/zlib/lib" TYPE STATIC_LIBRARY FILES "C:/Users/joey3/Documents/GitHub/SQARDatabase/zlib/RelWithDebInfo/zlibstatic.lib")
   endif()
 endif()
 
@@ -174,8 +174,8 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
 file(INSTALL DESTINATION "C:/Program Files (x86)/zlib/include" TYPE FILE FILES
-    "C:/Users/joey3/Downloads/zlib-1.2.8/zconf.h"
-    "C:/Users/joey3/Downloads/zlib-1.2.8/zlib.h"
+    "C:/Users/joey3/Documents/GitHub/SQARDatabase/zlib/zconf.h"
+    "C:/Users/joey3/Documents/GitHub/SQARDatabase/zlib/zlib.h"
     )
 endif()
 
@@ -188,7 +188,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "C:/Program Files (x86)/zlib/share/man/man3" TYPE FILE FILES "C:/Users/joey3/Downloads/zlib-1.2.8/zlib.3")
+file(INSTALL DESTINATION "C:/Program Files (x86)/zlib/share/man/man3" TYPE FILE FILES "C:/Users/joey3/Documents/GitHub/SQARDatabase/zlib/zlib.3")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -200,7 +200,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "C:/Program Files (x86)/zlib/share/pkgconfig" TYPE FILE FILES "C:/Users/joey3/Downloads/zlib-1.2.8/zlib.pc")
+file(INSTALL DESTINATION "C:/Program Files (x86)/zlib/share/pkgconfig" TYPE FILE FILES "C:/Users/joey3/Documents/GitHub/SQARDatabase/zlib/zlib.pc")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -211,5 +211,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/joey3/Downloads/zlib-1.2.8/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/joey3/Documents/GitHub/SQARDatabase/zlib/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -1,8 +1,8 @@
-C:/Users/joey3/Downloads/zlib-1.2.8/CMakeFiles/zlib.dir
-C:/Users/joey3/Downloads/zlib-1.2.8/CMakeFiles/zlibstatic.dir
-C:/Users/joey3/Downloads/zlib-1.2.8/CMakeFiles/example.dir
-C:/Users/joey3/Downloads/zlib-1.2.8/CMakeFiles/minigzip.dir
-C:/Users/joey3/Downloads/zlib-1.2.8/CMakeFiles/INSTALL.dir
-C:/Users/joey3/Downloads/zlib-1.2.8/CMakeFiles/RUN_TESTS.dir
-C:/Users/joey3/Downloads/zlib-1.2.8/CMakeFiles/ALL_BUILD.dir
-C:/Users/joey3/Downloads/zlib-1.2.8/CMakeFiles/ZERO_CHECK.dir
+C:/Users/joey3/Documents/GitHub/SQARDatabase/zlib/CMakeFiles/zlib.dir
+C:/Users/joey3/Documents/GitHub/SQARDatabase/zlib/CMakeFiles/zlibstatic.dir
+C:/Users/joey3/Documents/GitHub/SQARDatabase/zlib/CMakeFiles/example.dir
+C:/Users/joey3/Documents/GitHub/SQARDatabase/zlib/CMakeFiles/minigzip.dir
+C:/Users/joey3/Documents/GitHub/SQARDatabase/zlib/CMakeFiles/INSTALL.dir
+C:/Users/joey3/Documents/GitHub/SQARDatabase/zlib/CMakeFiles/RUN_TESTS.dir
+C:/Users/joey3/Documents/GitHub/SQARDatabase/zlib/CMakeFiles/ALL_BUILD.dir
+C:/Users/joey3/Documents/GitHub/SQARDatabase/zlib/CMakeFiles/ZERO_CHECK.dir

@@ -25,6 +25,18 @@
     <Filter Include="Source Files\Data">
       <UniqueIdentifier>{69e966f5-1341-46c0-83e4-a5a35af9e7f8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Data\Hashing">
+      <UniqueIdentifier>{925290af-b7c4-4656-9cf0-75e39e481dbd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Data\Hashing">
+      <UniqueIdentifier>{cd094cae-1b72-4d43-ac81-0514f987da17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FPK">
+      <UniqueIdentifier>{07aa3122-5221-464b-8961-1890689d5eea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\FPK">
+      <UniqueIdentifier>{9ac1d034-9607-4e94-9dbc-fb3e8f9ca9e3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SQAR.cpp">
@@ -36,11 +48,17 @@
     <ClCompile Include="SQARFile.cpp">
       <Filter>Source Files\SQAR</Filter>
     </ClCompile>
-    <ClCompile Include="UDataStream.cpp">
-      <Filter>Source Files\Data</Filter>
-    </ClCompile>
     <ClCompile Include="MD5.cpp">
       <Filter>Source Files\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="IO.cpp">
+      <Filter>Source Files\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="Hashing.cpp">
+      <Filter>Source Files\Data\Hashing</Filter>
+    </ClCompile>
+    <ClCompile Include="city.cc">
+      <Filter>Source Files\Data\Hashing</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -53,9 +71,6 @@
     <ClInclude Include="SQARFile.h">
       <Filter>Header Files\SQAR</Filter>
     </ClInclude>
-    <ClInclude Include="UDataStream.h">
-      <Filter>Header Files\Data</Filter>
-    </ClInclude>
     <ClInclude Include="MD5.h">
       <Filter>Header Files\Data</Filter>
     </ClInclude>
@@ -65,8 +80,14 @@
     <ClInclude Include="flat_hash_map.h">
       <Filter>Header Files\Data</Filter>
     </ClInclude>
-    <ClInclude Include="SQARFileBlob.h">
+    <ClInclude Include="IO.h">
       <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="Hashing.h">
+      <Filter>Header Files\Data\Hashing</Filter>
+    </ClInclude>
+    <ClInclude Include="city.h">
+      <Filter>Header Files\Data\Hashing</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

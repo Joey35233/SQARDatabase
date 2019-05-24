@@ -160,7 +160,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="UDataStream.cpp" />
+    <ClCompile Include="city.cc" />
+    <ClCompile Include="Hashing.cpp" />
+    <ClCompile Include="IO.cpp" />
     <ClCompile Include="MD5.cpp" />
     <ClCompile Include="SQARDatabase.cpp" />
     <ClCompile Include="SQAR.cpp" />
@@ -168,9 +170,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bytell_hash_map.h" />
-    <ClInclude Include="SQARFileBlob.h" />
+    <ClInclude Include="city.h" />
     <ClInclude Include="flat_hash_map.h" />
-    <ClInclude Include="UDataStream.h" />
+    <ClInclude Include="Hashing.h" />
+    <ClInclude Include="IO.h" />
     <ClInclude Include="MD5.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="SQAR.h" />

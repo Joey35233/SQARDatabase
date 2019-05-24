@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="C:\Users\joey3\Downloads\zlib-1.2.8\CMakeFiles\7bf9d7991747010c4decaeb3a13314e0\RUN_TESTS_force.rule">
+    <CustomBuild Include="C:\Users\joey3\Documents\GitHub\SQARDatabase\zlib\CMakeFiles\baa436ac212c382cc1b7db95e409796d\RUN_TESTS_force.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{55C51511-4F2C-32F8-B8EC-98D8671415FB}</UniqueIdentifier>
+      <UniqueIdentifier>{5A2E79D7-A572-3D93-BB48-C372218BA4B0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
