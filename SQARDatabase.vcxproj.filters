@@ -60,6 +60,12 @@
     <ClCompile Include="city.cc">
       <Filter>Source Files\Data\Hashing</Filter>
     </ClCompile>
+    <ClCompile Include="FPK.cpp">
+      <Filter>Source Files\FPK</Filter>
+    </ClCompile>
+    <ClCompile Include="FPKEntry.cpp">
+      <Filter>Source Files\FPK</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -88,6 +94,12 @@
     </ClInclude>
     <ClInclude Include="city.h">
       <Filter>Header Files\Data\Hashing</Filter>
+    </ClInclude>
+    <ClInclude Include="FPK.h">
+      <Filter>Header Files\FPK</Filter>
+    </ClInclude>
+    <ClInclude Include="FPKEntry.h">
+      <Filter>Header Files\FPK</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

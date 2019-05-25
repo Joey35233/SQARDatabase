@@ -18,7 +18,7 @@ UDataStream ReadFile(const wchar_t* fileName)
 	{
 		LARGE_INTEGER stupid;
 		GetFileSizeEx(file, &stupid);
-		size = *(uint64_t*)& stupid;
+		size = *(uint64_t*)&stupid;
 	}
 
 	auto buffer = new uint8_t[size];
@@ -46,6 +46,23 @@ void WriteFile(const wchar* name, const FileBlob& blob)
 		NULL
 	);
 	WriteFile(file, blob.data, blob.size, NULL, NULL);
+	CloseHandle(file);
+}
+
+void WriteFile(const wchar* name, const NamedFileBlob& blob)
+{
+	auto file = CreateFile
+	(
+		name,
+		GENERIC_WRITE,
+		FILE_SHARE_WRITE,
+		NULL,
+		CREATE_ALWAYS,
+		FILE_ATTRIBUTE_NORMAL,
+		NULL
+	);
+	auto offset = 8 + *(ulong*)blob.data + 1;
+	WriteFile(file, blob.data + offset, blob.size - offset, NULL, NULL);
 	CloseHandle(file);
 }
 
@@ -79,6 +96,13 @@ ubyte* UDataStream::ReadBytes(uint count)
 	auto ptr = buffer + bufferCursor;
 	bufferCursor += count;
 	return ptr;
+}
+
+char* UDataStream::ReadString(uint count)
+{
+	auto ptr = buffer + bufferCursor;
+	bufferCursor += count;
+	return (char*)ptr;
 }
 
 void UDataStream::Seek(ulong position)

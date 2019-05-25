@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "Hashing.h"
 
+ska::bytell_hash_map<uint, const char*> FileExtensionMap;
+
 ulong Hash(const char* string)
 {
 	return Hash(string, strlen(string));

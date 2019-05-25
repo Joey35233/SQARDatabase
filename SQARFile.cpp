@@ -16,15 +16,15 @@ SQARFile::SQARFile(UDataStream& stream)
 		Hash = (ulong)hashHigh << 32 | hashLow;
 	}
 	MetaFlag = (Hash & HashingMetaFlag) > 0;
-	UncompressedSize = stream.ReadUInt32() ^ XM[1];
-	CompressedSize = stream.ReadUInt32() ^ XM[2];
+	CompressedSize = stream.ReadUInt32() ^ XM[1];
+	UncompressedSize = stream.ReadUInt32() ^ XM[2];
 
 	DataHash = MD5(stream.ReadBytes(16));
 
 	DataOffset = stream.GetPosition();
 
 	uint hashLow = Hash & 0xFFFFFFFF;
-	uint index = (2 * ((hashLow + DataOffset / 11) % 4));
+	uint index = (2 * ((hashLow) % 4));
 	ulong header = stream.ReadUInt64() ^ ((ulong)DecryptionTable[index + 1] << 32 | DecryptionTable[index]);
 
 	Encryption = header;

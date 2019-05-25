@@ -68,7 +68,7 @@ ulong* SQAR::DecryptSectionList(ulong* sections)
 
 FileBlob SQAR::GetEntry(ulong hash)
 {
-	auto entry = Entries[hash];
+	auto entry = Entries[hash >> 32];
 	ubyte* buffer = nullptr;
 
 	auto uncompressedSize = entry->GetUncompressedSize();
