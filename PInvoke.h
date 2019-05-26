@@ -5,5 +5,5 @@
 
 extern "C"
 {
-	void GetFileNames(uint datPathCount, wchar** datPaths, uint dictionaryLineCount, wchar** dictionaryEntries, uint* fileNameCount, wchar** fileNames);
+	__declspec(dllexport) void GetFileNames(uint datPathCount, char** datPaths, uint dictionaryEntryCount, char** dictionaryEntries, uint* fileNameCount, char** fileNames);
 }

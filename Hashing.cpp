@@ -36,7 +36,7 @@ namespace Data::Hashing
 	}
 	ulong HashFilePath(const char* string, uint length)
 	{
-#ifdef _DEBUG
+		bool metaFlag = false;
 		// Test if string starts with "/Assets/"
 		if (*(ulong*)string == 0x2f7374657373412f)
 		{
@@ -44,13 +44,9 @@ namespace Data::Hashing
 			length -= 8;
 		}
 		else
-			DebugBreak();
-#else
-		string += 8;
-		length -= 8;
-#endif
+			metaFlag = true;
 
-		return Hash(string, length) & 0x3FFFFFFFFFFFF;
+		return metaFlag ? (Hash(string, length) & 0x3FFFFFFFFFFFF) | 0x4000000000000 : Hash(string, length) & 0x3FFFFFFFFFFFF;
 	}
 
 	ulong HashExtension(const char* string)

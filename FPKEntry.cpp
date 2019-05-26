@@ -8,14 +8,14 @@ namespace Fs::FPK::impl
 	{
 	}
 
-	FPKString::FPKString(UDataStream& stream)
+	FPKString::FPKString(UDataStream stream)
 	{
 		auto offset = stream.ReadUInt64();
 		Length = stream.ReadUInt64();
 		String = (char*)stream.GetBuffer() + offset;
 	}
 
-	FPKFile::FPKFile(UDataStream& stream)
+	FPKFile::FPKFile(UDataStream stream)
 	{
 		DataOffset = stream.ReadUInt64();
 		DataSize = stream.ReadUInt64();
@@ -38,7 +38,7 @@ namespace Fs::FPK::impl
 		return Name;
 	}
 
-	FPKReference::FPKReference(UDataStream& stream)
+	FPKReference::FPKReference(UDataStream stream)
 	{
 		ReferenceName = FPKString(stream);
 	}

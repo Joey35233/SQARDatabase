@@ -11,7 +11,7 @@ namespace Fs
 		{
 		public:
 			FPKString();
-			FPKString(UDataStream&);
+			FPKString(UDataStream);
 			ulong Length;
 			char* String;
 		};
@@ -19,7 +19,7 @@ namespace Fs
 		class FPKFile
 		{
 		public:
-			FPKFile(UDataStream&);
+			FPKFile(UDataStream);
 			ulong GetDataOffset();
 			ulong GetDataSize();
 			FPKString GetName();
@@ -34,7 +34,7 @@ namespace Fs
 		class FPKReference
 		{
 		public:
-			FPKReference(UDataStream&);
+			FPKReference(UDataStream);
 		private:
 			FPKString ReferenceName;
 		};

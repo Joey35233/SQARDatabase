@@ -3,7 +3,7 @@
 
 namespace Fs::FPK
 {
-	FPK::FPK(UDataStream& stream)
+	FPK::FPK(UDataStream stream)
 	{
 		Data = stream.GetBuffer();
 		stream.Skip(36);

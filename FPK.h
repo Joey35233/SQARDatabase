@@ -10,7 +10,7 @@ namespace Fs
 		class FPK
 		{
 		public:
-			FPK(UDataStream&);
+			FPK(UDataStream);
 			uint GetFileCount();
 			uint GetReferenceCount();
 			NamedFileBlob* GetFiles();
