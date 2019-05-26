@@ -41,7 +41,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -114,8 +114,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>zlib/Debug/zlibd.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>zlib/Debug</AdditionalLibraryDirectories>
+      <AdditionalDependencies>zlib/Release/zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>zlib/Release</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -166,7 +166,6 @@
     <ClCompile Include="Hashing.cpp" />
     <ClCompile Include="IO.cpp" />
     <ClCompile Include="MD5.cpp" />
-    <ClCompile Include="SQARDatabase.cpp" />
     <ClCompile Include="SQAR.cpp" />
     <ClCompile Include="SQARFile.cpp" />
   </ItemGroup>

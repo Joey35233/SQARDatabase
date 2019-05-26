@@ -9,16 +9,6 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="Header Files\SQAR">
-      <UniqueIdentifier>{bb04a0a9-3cf4-4c61-a8ae-0718017c70a1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\SQAR">
-      <UniqueIdentifier>{358c20cd-6e42-48fc-a0d2-61db3796b871}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Data">
       <UniqueIdentifier>{e2b7216d-33da-4719-bf83-dc682600d90d}</UniqueIdentifier>
     </Filter>
@@ -31,27 +21,33 @@
     <Filter Include="Header Files\Data\Hashing">
       <UniqueIdentifier>{cd094cae-1b72-4d43-ac81-0514f987da17}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\FPK">
+    <Filter Include="Header Files\Fs">
+      <UniqueIdentifier>{184729eb-1058-4e98-b3da-bc76fdb738c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Fs">
+      <UniqueIdentifier>{33836b38-4317-4f65-abaf-e4c7ee924e7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Fs\SQAR">
+      <UniqueIdentifier>{358c20cd-6e42-48fc-a0d2-61db3796b871}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Fs\FPK">
       <UniqueIdentifier>{07aa3122-5221-464b-8961-1890689d5eea}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\FPK">
+    <Filter Include="Header Files\Fs\SQAR">
+      <UniqueIdentifier>{bb04a0a9-3cf4-4c61-a8ae-0718017c70a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Fs\FPK">
       <UniqueIdentifier>{9ac1d034-9607-4e94-9dbc-fb3e8f9ca9e3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SQAR.cpp">
-      <Filter>Source Files\SQAR</Filter>
-    </ClCompile>
-    <ClCompile Include="SQARDatabase.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Fs\SQAR</Filter>
     </ClCompile>
     <ClCompile Include="SQARFile.cpp">
-      <Filter>Source Files\SQAR</Filter>
+      <Filter>Source Files\Fs\SQAR</Filter>
     </ClCompile>
     <ClCompile Include="MD5.cpp">
-      <Filter>Source Files\Data</Filter>
-    </ClCompile>
-    <ClCompile Include="IO.cpp">
       <Filter>Source Files\Data</Filter>
     </ClCompile>
     <ClCompile Include="Hashing.cpp">
@@ -61,10 +57,13 @@
       <Filter>Source Files\Data\Hashing</Filter>
     </ClCompile>
     <ClCompile Include="FPK.cpp">
-      <Filter>Source Files\FPK</Filter>
+      <Filter>Source Files\Fs\FPK</Filter>
     </ClCompile>
     <ClCompile Include="FPKEntry.cpp">
-      <Filter>Source Files\FPK</Filter>
+      <Filter>Source Files\Fs\FPK</Filter>
+    </ClCompile>
+    <ClCompile Include="IO.cpp">
+      <Filter>Source Files\Fs</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -72,10 +71,10 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SQAR.h">
-      <Filter>Header Files\SQAR</Filter>
+      <Filter>Header Files\Fs\SQAR</Filter>
     </ClInclude>
     <ClInclude Include="SQARFile.h">
-      <Filter>Header Files\SQAR</Filter>
+      <Filter>Header Files\Fs\SQAR</Filter>
     </ClInclude>
     <ClInclude Include="MD5.h">
       <Filter>Header Files\Data</Filter>
@@ -86,9 +85,6 @@
     <ClInclude Include="flat_hash_map.h">
       <Filter>Header Files\Data</Filter>
     </ClInclude>
-    <ClInclude Include="IO.h">
-      <Filter>Header Files\Data</Filter>
-    </ClInclude>
     <ClInclude Include="Hashing.h">
       <Filter>Header Files\Data\Hashing</Filter>
     </ClInclude>
@@ -96,10 +92,13 @@
       <Filter>Header Files\Data\Hashing</Filter>
     </ClInclude>
     <ClInclude Include="FPK.h">
-      <Filter>Header Files\FPK</Filter>
+      <Filter>Header Files\Fs\FPK</Filter>
     </ClInclude>
     <ClInclude Include="FPKEntry.h">
-      <Filter>Header Files\FPK</Filter>
+      <Filter>Header Files\Fs\FPK</Filter>
+    </ClInclude>
+    <ClInclude Include="IO.h">
+      <Filter>Header Files\Fs</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

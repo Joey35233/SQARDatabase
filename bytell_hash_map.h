@@ -7,15 +7,15 @@
 #include "pch.h"
 #include "flat_hash_map.h"
 
-namespace ska
+namespace Data
 {
 	namespace detailv8
 	{
-		using ska::detailv3::functor_storage;
-		using ska::detailv3::KeyOrValueHasher;
-		using ska::detailv3::KeyOrValueEquality;
-		using ska::detailv3::AssignIfTrue;
-		using ska::detailv3::HashPolicySelector;
+		using detailv3::functor_storage;
+		using detailv3::KeyOrValueHasher;
+		using detailv3::KeyOrValueEquality;
+		using detailv3::AssignIfTrue;
+		using detailv3::HashPolicySelector;
 
 		template<typename = void>
 		struct sherwood_v8_constants
@@ -1247,4 +1247,4 @@ namespace ska
 		}
 	};
 
-} // end namespace ska
+}

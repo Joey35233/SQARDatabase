@@ -1,9 +1,12 @@
 #pragma once
 #include "pch.h"
 
-struct MD5
+namespace Data
 {
-	MD5();
-	MD5(ubyte*);
-	ubyte data[16];
-};
+	struct MD5
+	{
+		MD5();
+		MD5(ubyte*);
+		ubyte data[16];
+	};
+}

@@ -3,34 +3,40 @@
 #include "IO.h"
 #include "MD5.h"
 
-class FPKString
+namespace Fs
 {
-public:
-	FPKString();
-	FPKString(UDataStream&);
-	ulong Length;
-	char* String;
-};
+	namespace FPK::impl
+	{
+		class FPKString
+		{
+		public:
+			FPKString();
+			FPKString(UDataStream&);
+			ulong Length;
+			char* String;
+		};
 
-class FPKFile
-{
-public:
-	FPKFile(UDataStream&);
-	ulong GetDataOffset();
-	ulong GetDataSize();
-	FPKString GetName();
+		class FPKFile
+		{
+		public:
+			FPKFile(UDataStream&);
+			ulong GetDataOffset();
+			ulong GetDataSize();
+			FPKString GetName();
 
-private:
-	ulong DataOffset;
-	ulong DataSize;
-	FPKString Name;
-	MD5 DataHash;
-};
+		private:
+			ulong DataOffset;
+			ulong DataSize;
+			FPKString Name;
+			Data::MD5 DataHash;
+		};
 
-class FPKReference
-{
-public:
-	FPKReference(UDataStream&);
-private:
-	FPKString ReferenceName;
-};
+		class FPKReference
+		{
+		public:
+			FPKReference(UDataStream&);
+		private:
+			FPKString ReferenceName;
+		};
+	}
+}

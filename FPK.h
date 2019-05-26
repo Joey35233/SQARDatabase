@@ -3,18 +3,24 @@
 #include "IO.h"
 #include "FPKEntry.h"
 
-class FPK
+namespace Fs
 {
-public:
-	FPK(UDataStream&);
-	uint GetFileCount();
-	uint GetReferenceCount();
-	NamedFileBlob* GetFiles();
+	namespace FPK
+	{
+		class FPK
+		{
+		public:
+			FPK(UDataStream&);
+			uint GetFileCount();
+			uint GetReferenceCount();
+			NamedFileBlob* GetFiles();
 
-private:
-	ubyte* Data;
-	uint FileCount;
-	uint ReferenceCount;
-	FPKFile* Files;
-	FPKReference* References;
-};
+		private:
+			ubyte* Data;
+			uint FileCount;
+			uint ReferenceCount;
+			impl::FPKFile* Files;
+			impl::FPKReference* References;
+		};
+	}
+}
