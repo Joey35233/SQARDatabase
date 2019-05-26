@@ -166,6 +166,7 @@
     <ClCompile Include="Hashing.cpp" />
     <ClCompile Include="IO.cpp" />
     <ClCompile Include="MD5.cpp" />
+    <ClCompile Include="PInvoke.cpp" />
     <ClCompile Include="SQAR.cpp" />
     <ClCompile Include="SQARFile.cpp" />
   </ItemGroup>
@@ -179,6 +180,7 @@
     <ClInclude Include="IO.h" />
     <ClInclude Include="MD5.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="PInvoke.h" />
     <ClInclude Include="SQAR.h" />
     <ClInclude Include="SQARFile.h" />
   </ItemGroup>
