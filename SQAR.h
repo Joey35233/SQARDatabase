@@ -23,11 +23,12 @@ namespace Fs
 			uint FirstFileOffset;
 			uint Version;
 			uint Unknown;
-			Data::bytell_hash_map<ulong, impl::SQARFile*> Entries;
+			uint BlockShiftCount;
 			ubyte* Data;
+			Data::bytell_hash_map<ulong, ulong> Entries;
 
 			void FormatHeader(ubyte* __restrict bytes);
-			ulong* DecryptSectionList(ulong* sections);
+			void DecryptSectionList(ulong* sections);
 			ubyte* DecryptData(uint hashLow, ulong dataOffset, ulong size);
 		};
 	}

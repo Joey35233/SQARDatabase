@@ -22,10 +22,16 @@ namespace Fs::SQAR
 		// Copy header
 		FormatHeader(stream.ReadBytes(32));
 
-		auto sections = DecryptSectionList((ulong*)stream.ReadBytes(FileCount * 8));
+		auto sections = (ulong*)stream.ReadBytes(FileCount * 8);
+		DecryptSectionList(sections);
 
 		// Determines the alignment block size.
-		int blockShiftBits = (Flags & 0x800) > 0 ? 12 : 10;
+		BlockShiftCount = (Flags & 0x800) > 0 ? 12 : 10;
+
+		for (uint i = 0; i < FileCount; i++)
+		{
+			Entries.emplace()
+		}
 
 		auto entries = (impl::SQARFile*)malloc(sizeof(impl::SQARFile) * FileCount);
 		for (uint i = 0; i < FileCount; i++)
@@ -34,7 +40,7 @@ namespace Fs::SQAR
 
 			ulong sectionBlock = section >> 40;
 			ulong hash = section & 0xFFFFFFFFFF;
-			ulong sectionOffset = sectionBlock << blockShiftBits;
+			ulong sectionOffset = sectionBlock << BlockShiftCount;
 			stream.Seek(sectionOffset);
 
 			entries[i] = impl::SQARFile(stream);
@@ -49,10 +55,8 @@ namespace Fs::SQAR
 			((ubyte*)this)[i] = XM_Header[i] ^ bytes[i];
 	}
 
-	ulong* SQAR::DecryptSectionList(ulong* sections)
+	void SQAR::DecryptSectionList(ulong* sections)
 	{
-		ulong* result = new ulong[FileCount];
-
 		for (int i = 0; i < FileCount; i += 1)
 		{
 			uint i1 = (uint)sections[i];
@@ -62,10 +66,8 @@ namespace Fs::SQAR
 			i1 ^= XM[index1];
 			i2 ^= XM[index2];
 
-			result[i] = (ulong)i2 << 32 | i1;
+			sections[i] = (ulong)i2 << 32 | i1;
 		}
-
-		return result;
 	}
 
 	FileBlob SQAR::GetEntry(ulong hash)
