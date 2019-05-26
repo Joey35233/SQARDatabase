@@ -1,73 +1,79 @@
 #pragma once
 #include "pch.h"
 
-struct FileBlob
+namespace Fs
 {
-	ulong size;
-	ubyte* data;
-
-	~FileBlob()
+	struct FileBlob
 	{
-		delete[] data;
-	}
-};
+		ulong size;
+		ubyte* data;
 
-struct NamedFileBlob
-{
-	ulong size;
-	ubyte* data;
+		~FileBlob()
+		{
+			delete[] data;
+		}
+	};
 
-	char* GetName()
+	struct NamedFileBlob
 	{
-		return (char*)data;
-	}
-};
+		ulong size;
+		ubyte* data;
 
-class UDataStream
-{
-public:
-	UDataStream(ubyte* buffer)
-		: buffer(buffer)
-	{}
+		char* GetName()
+		{
+			return (char*)data;
+		}
+	};
 
-	UDataStream(ubyte* buffer, ulong cursorOffset)
-		: buffer(buffer), bufferCursor(cursorOffset)
-	{}
-
-	template<typename T>
-	T Read()
+	class UDataStream
 	{
-		auto value = *(T*)(buffer + bufferCursor);
-		bufferCursor += sizeof(T);
-		return value;
-	}
+	public:
+		UDataStream(ubyte* buffer)
+			: buffer(buffer)
+		{}
 
-	template<typename T>
-	T Read(ulong offset)
-	{
-		auto value = *(T*)(buffer + offset);
-		return value;
-	}
+		UDataStream(ubyte* buffer, ulong cursorOffset)
+			: buffer(buffer), bufferCursor(cursorOffset)
+		{}
 
-	ubyte ReadUInt8();
-	ushort ReadUInt16();
-	uint ReadUInt32();
-	ulong ReadUInt64();
-	float ReadFloat();
-	ubyte* ReadBytes(uint);
-	char* ReadString(uint);
-	void Seek(ulong position);
-	void Skip(ulong amount);
-	ulong GetPosition();
-	ubyte* GetBuffer();
+		template<typename T>
+		T Read()
+		{
+			auto value = *(T*)(buffer + bufferCursor);
+			bufferCursor += sizeof(T);
+			return value;
+		}
 
-private:
-	ulong bufferCursor;
-	ubyte* buffer;
-};
+		template<typename T>
+		T Read(ulong offset)
+		{
+			auto value = *(T*)(buffer + offset);
+			return value;
+		}
 
-// This right here, this right here is laziness.
-UDataStream ReadFile(const wchar_t* fileName);
-void WriteFile(ulong hash, const FileBlob& blob);
-void WriteFile(const wchar* name, const FileBlob& blob);
-void WriteFile(const wchar* name, const NamedFileBlob& blob);
+		ubyte ReadUInt8();
+		ushort ReadUInt16();
+		uint ReadUInt32();
+		ulong ReadUInt64();
+		float ReadFloat();
+		ubyte* ReadBytes(uint);
+		char* ReadString(uint);
+		void Seek(ulong position);
+		void Skip(ulong amount);
+		ulong GetPosition();
+		ubyte* GetBuffer();
+
+	private:
+		ulong bufferCursor;
+		ubyte* buffer;
+	};
+
+	// This right here, this right here is laziness.
+	HANDLE GetReadHandle(const wchar_t* fileName);
+	ubyte* ReadFile(HANDLE file);
+	ubyte* ReadFile(HANDLE file, ulong size);
+
+	void WriteFile(ulong hash, const FileBlob& blob);
+	void WriteFile(const wchar* name, const FileBlob& blob);
+	void WriteFile(const wchar* name, const NamedFileBlob& blob);
+}

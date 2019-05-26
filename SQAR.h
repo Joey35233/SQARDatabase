@@ -10,9 +10,10 @@ namespace Fs
 		class SQAR
 		{
 		public:
-			SQAR(UDataStream&);
-			FileBlob GetEntry(ulong hash);
+			SQAR(UDataStream);
+
 			uint GetFileCount();
+			FileBlob GetEntry(ulong);
 
 		private:
 			uint Signature;
@@ -23,12 +24,12 @@ namespace Fs
 			uint FirstFileOffset;
 			uint Version;
 			uint Unknown;
-			uint BlockShiftCount;
 			ubyte* Data;
 			Data::bytell_hash_map<ulong, ulong> Entries;
 
-			void FormatHeader(ubyte* __restrict bytes);
-			void DecryptSectionList(ulong* sections);
+			void InitHeader(ubyte*);
+			void InitFileList(ubyte*);
+			ulong* DecryptSectionList(ulong* sections);
 			ubyte* DecryptData(uint hashLow, ulong dataOffset, ulong size);
 		};
 	}
