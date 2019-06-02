@@ -70,8 +70,7 @@ namespace Fs
 
 	// This right here, this right here is laziness.
 	HANDLE GetReadHandle(const wchar_t* fileName);
-	ubyte* ReadFile(HANDLE file);
-	ubyte* ReadFile(HANDLE file, ulong size);
+	UDataStream ReadFile(HANDLE file);
 
 	void WriteFile(ulong hash, const FileBlob& blob);
 	void WriteFile(const wchar* name, const FileBlob& blob);

@@ -5,7 +5,7 @@ namespace Fs::SQAR::impl
 {
 	static constexpr ulong HashingMetaFlag = 0x4000000000000;
 
-	SQARFile::SQARFile(UDataStream& stream)
+	SQARFile::SQARFile(UDataStream stream)
 	{
 		// Hash - 64
 		// UCSi - 32

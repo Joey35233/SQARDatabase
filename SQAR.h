@@ -7,13 +7,24 @@ namespace Fs
 {
 	namespace SQAR
 	{
+		struct SQARFileInformation
+		{
+			uint offset;
+			uint size;
+			ulong hash;
+			char* path;
+		};
+
 		class SQAR
 		{
 		public:
 			SQAR(UDataStream);
+			~SQAR();
 
 			uint GetFileCount();
 			FileBlob GetEntry(ulong);
+			void InitFileList();
+			void AddHashes(std::vector<SQARFileInformation>&);
 
 		private:
 			uint Signature;
@@ -28,7 +39,7 @@ namespace Fs
 			Data::bytell_hash_map<ulong, ulong> Entries;
 
 			void InitHeader(ubyte*);
-			void InitFileList(ubyte*);
+			ulong GetSectionEntry(uint);
 			ulong* DecryptSectionList(ulong* sections);
 			ubyte* DecryptData(uint hashLow, ulong dataOffset, ulong size);
 		};

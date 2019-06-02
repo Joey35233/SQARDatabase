@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "SQAR.h"
 #include <zlib.h>
+#include "Hashing.h"
 
 namespace Fs::SQAR
 {
@@ -22,17 +23,22 @@ namespace Fs::SQAR
 
 		// Copy header
 		InitHeader(stream.ReadBytes(32));
-
-		InitFileList(stream.ReadBytes(FileCount));
 	}
 
-	uint SQAR::GetFileCount()
+	SQAR::~SQAR()
 	{
-		return FileCount;
+		delete[] Data;
 	}
 
-	void SQAR::InitFileList(ubyte* data)
+	void SQAR::InitHeader(ubyte* bytes)
 	{
+		for (int i = 0; i < 32; ++i)
+			((ubyte*)this)[i] = XM_Header[i] ^ bytes[i];
+	}
+
+	void SQAR::InitFileList()
+	{
+		auto data = Data + 32;
 		auto sections = DecryptSectionList((ulong*)data);
 
 		// Determines the alignment block size.
@@ -46,6 +52,42 @@ namespace Fs::SQAR
 		}
 
 		delete[] sections;
+	}
+
+	ulong* SQAR::DecryptSectionList(ulong* list)
+	{
+		auto sections = new ulong[FileCount];
+
+		for (int i = 0; i < FileCount; i += 1)
+		{
+			uint i1 = (uint)list[i];
+			uint i2 = list[i] >> 32;
+			uint index1 = (i + ((i * sizeof(ulong)) / 5)) % 4;
+			uint index2 = (i + ((i * sizeof(ulong) + sizeof(uint)) / 5)) % 4;
+			i1 ^= XM[index1];
+			i2 ^= XM[index2];
+
+			sections[i] = (ulong)i2 << 32 | i1;
+		}
+
+		return sections;
+	}
+
+	ulong SQAR::GetSectionEntry(uint offset)
+	{
+		auto encryptedEntry = ((ulong*)(Data + 32))[offset];
+		ulong entry = 0;
+
+		uint i1 = (uint)encryptedEntry;
+		uint i2 = encryptedEntry >> 32;
+		uint index1 = (offset + ((offset * sizeof(ulong)) / 5)) % 4;
+		uint index2 = (offset + ((offset * sizeof(ulong) + sizeof(uint)) / 5)) % 4;
+		i1 ^= XM[index1];
+		i2 ^= XM[index2];
+
+		entry = (ulong)i2 << 32 | i1;
+
+		return entry;
 	}
 
 	FileBlob SQAR::GetEntry(ulong hash)
@@ -76,29 +118,22 @@ namespace Fs::SQAR
 		return { uncompressedSize, buffer };
 	}
 
-	void SQAR::InitHeader(ubyte* bytes)
+	void SQAR::AddHashes(std::vector<SQARFileInformation>& vec)
 	{
-		for (int i = 0; i < 32; ++i)
-			((ubyte*)this)[i] = XM_Header[i] ^ bytes[i];
-	}
+		auto stream = UDataStream(Data);
 
-	ulong* SQAR::DecryptSectionList(ulong* list)
-	{
-		auto sections = new ulong[FileCount];
-
-		for (int i = 0; i < FileCount; i += 1)
+		for (auto fileOffset : Entries)
 		{
-			uint i1 = (uint)list[i];
-			uint i2 = list[i] >> 32;
-			int index1 = (i + ((i * sizeof(ulong)) / 5)) % 4;
-			int index2 = (i + ((i * sizeof(ulong) + sizeof(uint)) / 5)) % 4;
-			i1 ^= XM[index1];
-			i2 ^= XM[index2];
+			stream.Seek(fileOffset.second);
+			auto file = impl::SQARFile(stream);
 
-			sections[i] = (ulong)i2 << 32 | i1;
+			SQARFileInformation info{};
+			info.offset = fileOffset.second;
+			info.size = file.GetCompressedSize();
+			info.hash = file.GetHash();
+			info.string = nullptr;
+			vec.push_back(std::move(info));
 		}
-
-		return sections;
 	}
 
 	ubyte* SQAR::DecryptData(uint hashLow, ulong dataOffset, ulong size)
@@ -129,5 +164,10 @@ namespace Fs::SQAR
 		}
 
 		return data;
+	}
+
+	uint SQAR::GetFileCount()
+	{
+		return FileCount;
 	}
 }

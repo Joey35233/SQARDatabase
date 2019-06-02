@@ -22,7 +22,7 @@ namespace Fs
 		class SQARFile
 		{
 		public:
-			SQARFile(UDataStream&);
+			SQARFile(UDataStream);
 			ulong GetUncompressedSize();
 			ulong GetCompressedSize();
 			ulong GetDataOffset();

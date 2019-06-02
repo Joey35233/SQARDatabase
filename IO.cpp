@@ -17,21 +17,16 @@ namespace Fs
 		);
 	}
 
-	ubyte* ReadFile(HANDLE file)
+	UDataStream ReadFile(HANDLE file)
 	{
 		LARGE_INTEGER stupid;
 		GetFileSizeEx(file, &stupid);
 		ulong size = *(ulong*)& stupid;
 
-		return ReadFile(file, size);
-	}
-
-	ubyte* ReadFile(HANDLE file, ulong size)
-	{
 		auto buffer = new uint8_t[size];
 		::ReadFile(file, buffer, size, NULL, NULL);
 
-		return buffer;
+		return UDataStream(buffer);
 	}
 
 	void WriteFile(ulong hash, const FileBlob& blob)

@@ -5,7 +5,8 @@ using namespace Fs;
 
 #define CreateFileForReading(x) CreateFile(x, GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL)
 
-void GetFileNames(uint datPathCount, char** datPaths, uint dictionaryLineCount, char** dictionaryEntries, uint* fileNameCount, char** fileNames)
+// I hate this code so much
+void GetFileNames(uint datPathCount, char** datPaths, uint dictionaryLineCount, char** dictionaryEntries, uint* fileCount, SQAR::SQARFileInformation** files)
 {
 	auto dictionary = Data::bytell_hash_map<ulong, char*>();
 	for (uint i = 0; i < dictionaryLineCount; i++)
@@ -15,22 +16,46 @@ void GetFileNames(uint datPathCount, char** datPaths, uint dictionaryLineCount, 
 		dictionary.emplace(hash, string);
 	}
 
-	auto SQARs = new SQAR::SQAR[datPathCount];
-	auto handles = new HANDLE[datPathCount];
+	// Context all the switches!
+	std::vector<SQAR::SQARFileInformation> fileInfo;
 	for (uint i = 0; i < datPathCount; i++)
 	{
-		auto datPathStrLength = strlen(datPaths[i]);
-		auto wStringBuffer = new wchar[datPathStrLength + 1];
-		mbstowcs_s(nullptr, wStringBuffer, datPathStrLength + 1, datPaths[i], datPathStrLength + 2);
-		handles[i] = CreateFileForReading(wStringBuffer);
+		HANDLE handle;
+		{
+			auto datPathStrLength = strlen(datPaths[i]);
+			auto wStringBuffer = new wchar[datPathStrLength + 1];
+			mbstowcs_s(nullptr, wStringBuffer, datPathStrLength + 1, datPaths[i], datPathStrLength + 2);
+			handle = CreateFileForReading(wStringBuffer);
+			delete[] wStringBuffer;
+		}
 
-		auto handle = handles[i];
+		auto stream = ReadFile(handle);
+		auto archive = SQAR::SQAR(stream);
+		archive.AddHashes(fileInfo);
 
-		SQARs[i].InitHeader(ReadFile(handle, 32));
-		SQARs[i].InitFileList(ReadFile(handle, SQARs[i].GetFileCount() * 8));
+		CloseHandle(handle);
+	}
 
-		auto first = SQARs[i].GetEntry(0x522997cd03f88edd);
-		*fileNameCount = SQARs[i].GetFileCount();
+	*fileCount = fileInfo.size();
+	*files = (SQAR::SQARFileInformation*)CoTaskMemAlloc(*fileCount * sizeof(SQAR::SQARFileInformation));
+	for (uint i = 0; i < *fileCount; i++)
+	{
+		auto hash = fileInfo[i].hash & 0x3FFFFFFFFFFFF;
+		auto cstr = dictionary[hash];
+		std::string string;
+		if (!cstr)
+		{
+			std::stringstream stream;
+			stream << "0x" << std::hex << hash;
+			string = stream.str();
+		}
+		else
+		{
+			string = cstr;
+		}
+
+		fileInfo[i].path = (char*)CoTaskMemAlloc(string.length() + 1);
+		memcpy(fileInfo[i].path, string.c_str(), string.length() + 1);
 	}
 
 	return;
