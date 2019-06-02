@@ -118,22 +118,27 @@ namespace Fs::SQAR
 		return { uncompressedSize, buffer };
 	}
 
-	void SQAR::AddHashes(std::vector<SQARFileInformation>& vec)
+	void SQAR::PopulateFileInfo(SQARFileInformation* fileInfo)
 	{
 		auto stream = UDataStream(Data);
 
-		for (auto fileOffset : Entries)
+		auto sections = DecryptSectionList((ulong*)(Data + 32));
+		uint blockShiftCount = (Flags & 0x800) > 0 ? 12 : 10;
+
+		for (uint i = 0; i < FileCount; i++)
 		{
-			stream.Seek(fileOffset.second);
+			auto offset = sections[i] >> 40;
+			offset <<= blockShiftCount;
+
+			stream.Seek(offset);
 			auto file = impl::SQARFile(stream);
 
-			SQARFileInformation info{};
-			info.offset = fileOffset.second;
-			info.size = file.GetCompressedSize();
-			info.hash = file.GetHash();
-			info.string = nullptr;
-			vec.push_back(std::move(info));
+			fileInfo[i].offset = offset;
+			fileInfo[i].size = file.GetCompressedSize();
+			fileInfo[i].hash = file.GetHash();
 		}
+
+		delete[] sections;
 	}
 
 	ubyte* SQAR::DecryptData(uint hashLow, ulong dataOffset, ulong size)

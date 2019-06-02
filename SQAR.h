@@ -12,7 +12,6 @@ namespace Fs
 			uint offset;
 			uint size;
 			ulong hash;
-			char* path;
 		};
 
 		class SQAR
@@ -24,7 +23,7 @@ namespace Fs
 			uint GetFileCount();
 			FileBlob GetEntry(ulong);
 			void InitFileList();
-			void AddHashes(std::vector<SQARFileInformation>&);
+			void PopulateFileInfo(SQARFileInformation*);
 
 		private:
 			uint Signature;
