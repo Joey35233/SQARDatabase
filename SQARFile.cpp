@@ -1,22 +1,17 @@
 #include "pch.h"
-#include "SQARFile.h"
+#include "SqarFile.h"
 
-namespace Fs::SQAR::impl
+namespace Fs::Sqar::impl
 {
 	static constexpr ulong HashingMetaFlag = 0x4000000000000;
 
-	SQARFile::SQARFile(UDataStream stream)
+	SqarFile::SqarFile(UDataStream stream)
 	{
 		// Hash - 64
-		// UCSi - 32
-		// CMSi - 32
+		// USiz - 32
+		// CSiz - 32
 		// MD5  - 128
-		{
-			// Can't compress this because the high part is second.
-			uint hashLow = stream.ReadUInt32() ^ XM[0];
-			uint hashHigh = stream.ReadUInt32() ^ XM[0];
-			Hash = (ulong)hashHigh << 32 | hashLow;
-		}
+		Hash = stream.ReadUInt64() ^ (((ulong)XM[0] << 32) | XM[0]);
 		MetaFlag = (Hash & HashingMetaFlag) > 0;
 		CompressedSize = stream.ReadUInt32() ^ XM[1];
 		UncompressedSize = stream.ReadUInt32() ^ XM[2];
@@ -25,7 +20,7 @@ namespace Fs::SQAR::impl
 
 		DataOffset = stream.GetPosition();
 
-		uint hashLow = Hash & 0xFFFFFFFF;
+		uint hashLow = (uint)Hash;
 		uint index = (2 * ((hashLow) % 4));
 		ulong header = stream.ReadUInt64() ^ ((ulong)DecryptionTable[index + 1] << 32 | DecryptionTable[index]);
 
@@ -40,32 +35,32 @@ namespace Fs::SQAR::impl
 		}
 	}
 
-	ulong SQARFile::GetUncompressedSize()
+	ulong SqarFile::GetUncompressedSize()
 	{
 		return UncompressedSize;
 	}
 
-	ulong SQARFile::GetCompressedSize()
+	ulong SqarFile::GetCompressedSize()
 	{
 		return CompressedSize;
 	}
 
-	ulong SQARFile::GetDataOffset()
+	ulong SqarFile::GetDataOffset()
 	{
 		return DataOffset;
 	}
 
-	ulong SQARFile::GetHash()
+	ulong SqarFile::GetHash()
 	{
 		return Hash;
 	}
 
-	bool SQARFile::IsCompressed()
+	bool SqarFile::IsCompressed()
 	{
 		return CompressedSize != UncompressedSize;
 	}
 
-	bool SQARFile::IsEncrypted()
+	bool SqarFile::IsEncrypted()
 	{
 		return Encryption != 0;
 	}

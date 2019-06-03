@@ -5,7 +5,7 @@
 
 namespace Fs
 {
-	namespace SQAR::impl
+	namespace Sqar::impl
 	{
 		static constexpr uint DecryptionTable[]
 		{
@@ -19,10 +19,10 @@ namespace Fs
 			0xF3818583
 		};
 
-		class SQARFile
+		class SqarFile
 		{
 		public:
-			SQARFile(UDataStream);
+			SqarFile(UDataStream);
 			ulong GetUncompressedSize();
 			ulong GetCompressedSize();
 			ulong GetDataOffset();

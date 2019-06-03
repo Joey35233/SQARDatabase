@@ -148,7 +148,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>zlib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>zlib%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -162,28 +162,28 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="city.cc" />
-    <ClCompile Include="FPK.cpp" />
-    <ClCompile Include="FPKEntry.cpp" />
+    <ClCompile Include="Fpk.cpp" />
+    <ClCompile Include="FpkEntry.cpp" />
     <ClCompile Include="Hashing.cpp" />
     <ClCompile Include="IO.cpp" />
     <ClCompile Include="MD5.cpp" />
     <ClCompile Include="PInvoke.cpp" />
-    <ClCompile Include="SQAR.cpp" />
-    <ClCompile Include="SQARFile.cpp" />
+    <ClCompile Include="Sqar.cpp" />
+    <ClCompile Include="SqarFile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bytell_hash_map.h" />
     <ClInclude Include="city.h" />
     <ClInclude Include="flat_hash_map.h" />
-    <ClInclude Include="FPK.h" />
-    <ClInclude Include="FPKEntry.h" />
+    <ClInclude Include="Fpk.h" />
+    <ClInclude Include="FpkEntry.h" />
     <ClInclude Include="Hashing.h" />
     <ClInclude Include="IO.h" />
     <ClInclude Include="MD5.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="PInvoke.h" />
-    <ClInclude Include="SQAR.h" />
-    <ClInclude Include="SQARFile.h" />
+    <ClInclude Include="Sqar.h" />
+    <ClInclude Include="SqarFile.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

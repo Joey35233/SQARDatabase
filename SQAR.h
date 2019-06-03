@@ -1,29 +1,29 @@
 #pragma once
-#include "SQARFile.h"
+#include "SqarFile.h"
 #include "IO.h"
 #include "bytell_hash_map.h"
 
 namespace Fs
 {
-	namespace SQAR
+	namespace Sqar
 	{
-		struct SQARFileInformation
+		struct SqarFileInformation
 		{
 			uint offset;
 			uint size;
 			ulong hash;
 		};
 
-		class SQAR
+		class Sqar
 		{
 		public:
-			SQAR(UDataStream);
-			~SQAR();
+			Sqar(UDataStream);
+			~Sqar();
 
 			uint GetFileCount();
 			FileBlob GetEntry(ulong);
 			void InitFileList();
-			void PopulateFileInfo(SQARFileInformation*);
+			void PopulateFileInfo(SqarFileInformation*);
 
 		private:
 			uint Signature;

@@ -27,25 +27,25 @@
     <Filter Include="Source Files\Fs">
       <UniqueIdentifier>{33836b38-4317-4f65-abaf-e4c7ee924e7f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Fs\SQAR">
-      <UniqueIdentifier>{358c20cd-6e42-48fc-a0d2-61db3796b871}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Fs\FPK">
+    <Filter Include="Source Files\Fs\Fpk">
       <UniqueIdentifier>{07aa3122-5221-464b-8961-1890689d5eea}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Fs\SQAR">
-      <UniqueIdentifier>{bb04a0a9-3cf4-4c61-a8ae-0718017c70a1}</UniqueIdentifier>
+    <Filter Include="Source Files\Fs\Sqar">
+      <UniqueIdentifier>{358c20cd-6e42-48fc-a0d2-61db3796b871}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Fs\FPK">
+    <Filter Include="Header Files\Fs\Fpk">
       <UniqueIdentifier>{9ac1d034-9607-4e94-9dbc-fb3e8f9ca9e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Fs\Sqar">
+      <UniqueIdentifier>{bb04a0a9-3cf4-4c61-a8ae-0718017c70a1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="SQAR.cpp">
-      <Filter>Source Files\Fs\SQAR</Filter>
+    <ClCompile Include="Sqar.cpp">
+      <Filter>Source Files\Fs\Sqar</Filter>
     </ClCompile>
-    <ClCompile Include="SQARFile.cpp">
-      <Filter>Source Files\Fs\SQAR</Filter>
+    <ClCompile Include="SqarFile.cpp">
+      <Filter>Source Files\Fs\Sqar</Filter>
     </ClCompile>
     <ClCompile Include="MD5.cpp">
       <Filter>Source Files\Data</Filter>
@@ -56,11 +56,11 @@
     <ClCompile Include="city.cc">
       <Filter>Source Files\Data\Hashing</Filter>
     </ClCompile>
-    <ClCompile Include="FPK.cpp">
-      <Filter>Source Files\Fs\FPK</Filter>
+    <ClCompile Include="Fpk.cpp">
+      <Filter>Source Files\Fs\Fpk</Filter>
     </ClCompile>
-    <ClCompile Include="FPKEntry.cpp">
-      <Filter>Source Files\Fs\FPK</Filter>
+    <ClCompile Include="FpkEntry.cpp">
+      <Filter>Source Files\Fs\Fpk</Filter>
     </ClCompile>
     <ClCompile Include="IO.cpp">
       <Filter>Source Files\Fs</Filter>
@@ -73,11 +73,11 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SQAR.h">
-      <Filter>Header Files\Fs\SQAR</Filter>
+    <ClInclude Include="Sqar.h">
+      <Filter>Header Files\Fs\Sqar</Filter>
     </ClInclude>
-    <ClInclude Include="SQARFile.h">
-      <Filter>Header Files\Fs\SQAR</Filter>
+    <ClInclude Include="SqarFile.h">
+      <Filter>Header Files\Fs\Sqar</Filter>
     </ClInclude>
     <ClInclude Include="MD5.h">
       <Filter>Header Files\Data</Filter>
@@ -94,11 +94,11 @@
     <ClInclude Include="city.h">
       <Filter>Header Files\Data\Hashing</Filter>
     </ClInclude>
-    <ClInclude Include="FPK.h">
-      <Filter>Header Files\Fs\FPK</Filter>
+    <ClInclude Include="Fpk.h">
+      <Filter>Header Files\Fs\Fpk</Filter>
     </ClInclude>
-    <ClInclude Include="FPKEntry.h">
-      <Filter>Header Files\Fs\FPK</Filter>
+    <ClInclude Include="FpkEntry.h">
+      <Filter>Header Files\Fs\Fpk</Filter>
     </ClInclude>
     <ClInclude Include="IO.h">
       <Filter>Header Files\Fs</Filter>

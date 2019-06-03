@@ -1,9 +1,9 @@
 #include "pch.h"
-#include "SQAR.h"
+#include "Sqar.h"
 #include <zlib.h>
 #include "Hashing.h"
 
-namespace Fs::SQAR
+namespace Fs::Sqar
 {
 	static constexpr ubyte XM_Header[]
 	{
@@ -17,7 +17,7 @@ namespace Fs::SQAR
 		0x50, 0x20, 0xC2, 0x11
 	};
 
-	SQAR::SQAR(UDataStream stream)
+	Sqar::Sqar(UDataStream stream)
 	{
 		Data = stream.GetBuffer();
 
@@ -25,18 +25,18 @@ namespace Fs::SQAR
 		InitHeader(stream.ReadBytes(32));
 	}
 
-	SQAR::~SQAR()
+	Sqar::~Sqar()
 	{
 		delete[] Data;
 	}
 
-	void SQAR::InitHeader(ubyte* bytes)
+	void Sqar::InitHeader(ubyte* bytes)
 	{
 		for (int i = 0; i < 32; ++i)
 			((ubyte*)this)[i] = XM_Header[i] ^ bytes[i];
 	}
 
-	void SQAR::InitFileList()
+	void Sqar::InitFileList()
 	{
 		auto data = Data + 32;
 		auto sections = DecryptSectionList((ulong*)data);
@@ -54,7 +54,7 @@ namespace Fs::SQAR
 		delete[] sections;
 	}
 
-	ulong* SQAR::DecryptSectionList(ulong* list)
+	ulong* Sqar::DecryptSectionList(ulong* list)
 	{
 		auto sections = new ulong[FileCount];
 
@@ -73,7 +73,7 @@ namespace Fs::SQAR
 		return sections;
 	}
 
-	ulong SQAR::GetSectionEntry(uint offset)
+	ulong Sqar::GetSectionEntry(uint offset)
 	{
 		auto encryptedEntry = ((ulong*)(Data + 32))[offset];
 		ulong entry = 0;
@@ -90,12 +90,12 @@ namespace Fs::SQAR
 		return entry;
 	}
 
-	FileBlob SQAR::GetEntry(ulong hash)
+	FileBlob Sqar::GetEntry(ulong hash)
 	{
 		// This needs a revamp
 		auto offset = Entries[hash >> 32];
 		auto stream = UDataStream(Data + offset);
-		auto file = impl::SQARFile(stream);
+		auto file = impl::SqarFile(stream);
 
 		ubyte* buffer = nullptr;
 
@@ -118,7 +118,7 @@ namespace Fs::SQAR
 		return { uncompressedSize, buffer };
 	}
 
-	void SQAR::PopulateFileInfo(SQARFileInformation* fileInfo)
+	void Sqar::PopulateFileInfo(SqarFileInformation* fileInfo)
 	{
 		auto stream = UDataStream(Data);
 
@@ -131,7 +131,7 @@ namespace Fs::SQAR
 			offset <<= blockShiftCount;
 
 			stream.Seek(offset);
-			auto file = impl::SQARFile(stream);
+			auto file = impl::SqarFile(stream);
 
 			fileInfo[i].offset = offset;
 			fileInfo[i].size = file.GetCompressedSize();
@@ -141,7 +141,7 @@ namespace Fs::SQAR
 		delete[] sections;
 	}
 
-	ubyte* SQAR::DecryptData(uint hashLow, ulong dataOffset, ulong size)
+	ubyte* Sqar::DecryptData(uint hashLow, ulong dataOffset, ulong size)
 	{
 		auto data = Data + dataOffset;
 
@@ -171,7 +171,7 @@ namespace Fs::SQAR
 		return data;
 	}
 
-	uint SQAR::GetFileCount()
+	uint Sqar::GetFileCount()
 	{
 		return FileCount;
 	}

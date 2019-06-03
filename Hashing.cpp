@@ -15,7 +15,7 @@ namespace Data::Hashing
 		ulong seed1 = 0;
 		for (int i = length - 1, j = 0; i >= 0 && j < sizeof(ulong); i--, j++)
 		{
-			((ubyte*)& seed1)[j] = string[i];
+			seed1 |= (ulong)string[i] << (j * 8);
 		}
 
 		return CityHash::CityHash64WithSeeds(string, length, seed0, seed1);
