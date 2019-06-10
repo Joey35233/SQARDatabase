@@ -1,45 +1,45 @@
 #pragma once
 #include "pch.h"
-#include "FPKEntry.h"
+#include "FpkEntry.h"
 
-namespace Fs::FPK::impl
+namespace Fs::Fpk::impl
 {
-	FPKString::FPKString()
+	FpkString::FpkString()
 	{
 	}
 
-	FPKString::FPKString(UDataStream stream)
+	FpkString::FpkString(UDataStream& stream)
 	{
 		auto offset = stream.ReadUInt64();
 		Length = stream.ReadUInt64();
 		String = (char*)stream.GetBuffer() + offset;
 	}
 
-	FPKFile::FPKFile(UDataStream stream)
+	FpkFile::FpkFile(UDataStream& stream)
 	{
 		DataOffset = stream.ReadUInt64();
 		DataSize = stream.ReadUInt64();
-		Name = FPKString(stream);
+		Name = FpkString(stream);
 		DataHash = Data::MD5(stream.ReadBytes(16));
 	}
 
-	ulong FPKFile::GetDataOffset()
+	ulong FpkFile::GetDataOffset()
 	{
 		return DataOffset;
 	}
 
-	ulong FPKFile::GetDataSize()
+	ulong FpkFile::GetDataSize()
 	{
 		return DataSize;
 	}
 
-	FPKString FPKFile::GetName()
+	FpkString FpkFile::GetName()
 	{
 		return Name;
 	}
 
-	FPKReference::FPKReference(UDataStream stream)
+	FpkReference::FpkReference(UDataStream& stream)
 	{
-		ReferenceName = FPKString(stream);
+		ReferenceName = FpkString(stream);
 	}
 }

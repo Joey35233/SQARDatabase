@@ -1,9 +1,9 @@
 #include "pch.h"
-#include "FPK.h"
+#include "Fpk.h"
 
-namespace Fs::FPK
+namespace Fs::Fpk
 {
-	FPK::FPK(UDataStream stream)
+	Fpk::Fpk(UDataStream stream)
 	{
 		Data = stream.GetBuffer();
 		stream.Skip(36);
@@ -11,30 +11,30 @@ namespace Fs::FPK
 		ReferenceCount = stream.ReadUInt32();
 		stream.Skip(4);
 
-		Files = (impl::FPKFile*)malloc(sizeof(impl::FPKFile) * FileCount);
+		Files = (impl::FpkFile*)malloc(sizeof(impl::FpkFile) * FileCount);
 		for (uint i = 0; i < FileCount; i++)
 		{
-			Files[i] = impl::FPKFile(stream);
+			Files[i] = impl::FpkFile(stream);
 		}
 
-		References = (impl::FPKReference*)malloc(sizeof(impl::FPKReference) * ReferenceCount);
+		References = (impl::FpkReference*)malloc(sizeof(impl::FpkReference) * ReferenceCount);
 		for (uint i = 0; i < ReferenceCount; i++)
 		{
-			References[i] = impl::FPKReference(stream);
+			References[i] = impl::FpkReference(stream);
 		}
 	}
 
-	uint FPK::GetFileCount()
+	uint Fpk::GetFileCount()
 	{
 		return FileCount;
 	}
 
-	uint FPK::GetReferenceCount()
+	uint Fpk::GetReferenceCount()
 	{
 		return ReferenceCount;
 	}
 
-	NamedFileBlob* FPK::GetFiles()
+	NamedFileBlob* Fpk::GetFiles()
 	{
 		auto blobs = new NamedFileBlob[FileCount];
 

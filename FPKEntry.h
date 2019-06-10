@@ -5,38 +5,38 @@
 
 namespace Fs
 {
-	namespace FPK::impl
+	namespace Fpk::impl
 	{
-		class FPKString
+		class FpkString
 		{
 		public:
-			FPKString();
-			FPKString(UDataStream);
+			FpkString();
+			FpkString(UDataStream&);
 			ulong Length;
 			char* String;
 		};
 
-		class FPKFile
+		class FpkFile
 		{
 		public:
-			FPKFile(UDataStream);
+			FpkFile(UDataStream&);
 			ulong GetDataOffset();
 			ulong GetDataSize();
-			FPKString GetName();
+			FpkString GetName();
 
 		private:
 			ulong DataOffset;
 			ulong DataSize;
-			FPKString Name;
+			FpkString Name;
 			Data::MD5 DataHash;
 		};
 
-		class FPKReference
+		class FpkReference
 		{
 		public:
-			FPKReference(UDataStream);
+			FpkReference(UDataStream&);
 		private:
-			FPKString ReferenceName;
+			FpkString ReferenceName;
 		};
 	}
 }

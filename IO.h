@@ -29,7 +29,7 @@ namespace Fs
 	{
 	public:
 		UDataStream(ubyte* buffer)
-			: buffer(buffer)
+			: buffer(buffer), bufferCursor(0)
 		{}
 
 		UDataStream(ubyte* buffer, ulong cursorOffset)

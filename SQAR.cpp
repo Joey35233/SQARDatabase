@@ -100,7 +100,7 @@ namespace Fs::Sqar
 		ubyte* buffer = nullptr;
 
 		auto uncompressedSize = file.GetUncompressedSize();
-		auto dataOffset = file.GetDataOffset();
+		auto dataOffset = offset + 32;
 
 		if (file.IsCompressed())
 		{

@@ -1,16 +1,16 @@
 #pragma once
 #include "pch.h"
 #include "IO.h"
-#include "FPKEntry.h"
+#include "FpkEntry.h"
 
 namespace Fs
 {
-	namespace FPK
+	namespace Fpk
 	{
-		class FPK
+		class Fpk
 		{
 		public:
-			FPK(UDataStream);
+			Fpk(UDataStream);
 			uint GetFileCount();
 			uint GetReferenceCount();
 			NamedFileBlob* GetFiles();
@@ -19,8 +19,8 @@ namespace Fs
 			ubyte* Data;
 			uint FileCount;
 			uint ReferenceCount;
-			impl::FPKFile* Files;
-			impl::FPKReference* References;
+			impl::FpkFile* Files;
+			impl::FpkReference* References;
 		};
 	}
 }

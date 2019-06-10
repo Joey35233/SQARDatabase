@@ -5,5 +5,6 @@
 
 extern "C"
 {
-	__declspec(dllexport) void GetFileInfo(wchar* datPath, uint* fileInfoCount, Fs::Sqar::SqarFileInformation** fileInfo);
+	__declspec(dllexport) void GetFileInfo(HANDLE fileHandle, uint* fileInfoCount, Fs::Sqar::SqarFileInformation** fileInfo);
+	__declspec(dllexport) void GetFpk();
 }
