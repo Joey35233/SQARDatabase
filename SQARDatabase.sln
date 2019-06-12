@@ -5,16 +5,40 @@ VisualStudioVersion = 16.0.28803.452
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SQARDatabase", "SQARDatabase.vcxproj", "{CF39AC82-1B78-4DE2-8225-3F4B93CF5EFF}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SQARDatabaseWinRT", "SQARDatabaseWinRT\SQARDatabaseWinRT\SQARDatabaseWinRT.vcxproj", "{77C008EC-C260-4433-AE8F-78F9419D58B2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
 		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|ARM = Release|ARM
 		Release|x64 = Release|x64
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF39AC82-1B78-4DE2-8225-3F4B93CF5EFF}.Debug|ARM.ActiveCfg = Debug|Win32
 		{CF39AC82-1B78-4DE2-8225-3F4B93CF5EFF}.Debug|x64.ActiveCfg = Debug|x64
 		{CF39AC82-1B78-4DE2-8225-3F4B93CF5EFF}.Debug|x64.Build.0 = Debug|x64
+		{CF39AC82-1B78-4DE2-8225-3F4B93CF5EFF}.Debug|x86.ActiveCfg = Debug|Win32
+		{CF39AC82-1B78-4DE2-8225-3F4B93CF5EFF}.Debug|x86.Build.0 = Debug|Win32
+		{CF39AC82-1B78-4DE2-8225-3F4B93CF5EFF}.Release|ARM.ActiveCfg = Release|Win32
 		{CF39AC82-1B78-4DE2-8225-3F4B93CF5EFF}.Release|x64.ActiveCfg = Release|x64
 		{CF39AC82-1B78-4DE2-8225-3F4B93CF5EFF}.Release|x64.Build.0 = Release|x64
+		{CF39AC82-1B78-4DE2-8225-3F4B93CF5EFF}.Release|x86.ActiveCfg = Release|Win32
+		{CF39AC82-1B78-4DE2-8225-3F4B93CF5EFF}.Release|x86.Build.0 = Release|Win32
+		{77C008EC-C260-4433-AE8F-78F9419D58B2}.Debug|ARM.ActiveCfg = Debug|ARM
+		{77C008EC-C260-4433-AE8F-78F9419D58B2}.Debug|ARM.Build.0 = Debug|ARM
+		{77C008EC-C260-4433-AE8F-78F9419D58B2}.Debug|x64.ActiveCfg = Debug|x64
+		{77C008EC-C260-4433-AE8F-78F9419D58B2}.Debug|x64.Build.0 = Debug|x64
+		{77C008EC-C260-4433-AE8F-78F9419D58B2}.Debug|x86.ActiveCfg = Debug|Win32
+		{77C008EC-C260-4433-AE8F-78F9419D58B2}.Debug|x86.Build.0 = Debug|Win32
+		{77C008EC-C260-4433-AE8F-78F9419D58B2}.Release|ARM.ActiveCfg = Release|ARM
+		{77C008EC-C260-4433-AE8F-78F9419D58B2}.Release|ARM.Build.0 = Release|ARM
+		{77C008EC-C260-4433-AE8F-78F9419D58B2}.Release|x64.ActiveCfg = Release|x64
+		{77C008EC-C260-4433-AE8F-78F9419D58B2}.Release|x64.Build.0 = Release|x64
+		{77C008EC-C260-4433-AE8F-78F9419D58B2}.Release|x86.ActiveCfg = Release|Win32
+		{77C008EC-C260-4433-AE8F-78F9419D58B2}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

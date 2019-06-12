@@ -1,0 +1,8 @@
+namespace Database
+{
+	[default_interface]
+	runtimeclass Test
+	{
+		void Dat();
+	}
+}

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resources">
+      <UniqueIdentifier>accd3aa8-1ba0-4223-9bbe-0c431709210b</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tga;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{926ab91d-31b4-48c3-b9a4-e681349f27f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Cruft">
+      <UniqueIdentifier>{c99df4b1-ce0d-48cc-a466-9bd2cfec157a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Cruft\UWP">
+      <UniqueIdentifier>{82f2495c-e6d5-4abc-9788-b627cbeb4fd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{0d14ff4c-d374-4c12-b35e-f01755572196}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(GeneratedFilesDir)module.g.cpp">
+      <Filter>Cruft\UWP</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Cruft</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <Filter>Cruft</Filter>
+    </None>
+    <None Include="PropertySheet.props">
+      <Filter>Cruft</Filter>
+    </None>
+    <None Include="SQARDatabaseWinRT.def">
+      <Filter>Cruft</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h">
+      <Filter>Cruft</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="Test.idl">
+      <Filter>Source</Filter>
+    </Midl>
+  </ItemGroup>
+</Project>

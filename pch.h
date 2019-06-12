@@ -2,7 +2,6 @@
 
 #include <iostream>
 #define WIN32_LEAN_AND_MEAN
-#define NOMINMAX
 #include <combaseapi.h>
 #include <windows.h>
 #include <emmintrin.h>

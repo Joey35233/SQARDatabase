@@ -18,17 +18,3 @@ void GetFileInfo(HANDLE fileHandle, uint* fileInfoCount, Fs::Sqar::SqarFileInfor
 
 	return;
 }
-
-void GetFpk()
-{
-	auto fpkHash = Data::Hashing::HashFilePathWithExtension("/Assets/tpp/pack/location/afgh/pack_large/afgh_ruins.fpkd");
-
-	auto stream = ReadFile(CreateFileForReading(L"D:\\SteamLibrary\\steamapps\\common\\MGS_TPP\\master\\chunk2.dat"));
-	auto archive = Sqar::Sqar(stream);
-	archive.InitFileList();
-	auto blob = archive.GetEntry(fpkHash);
-	auto fpk = Fs::Fpk::Fpk(UDataStream(blob.data));
-	fpk.GetFileCount();
-
-	return;
-}
